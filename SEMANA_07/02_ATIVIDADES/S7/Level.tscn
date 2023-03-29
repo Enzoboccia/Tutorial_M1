@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Paddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 502.026, 27.5 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -4, 596, 1, -5, 1021, 2, 1024, 604, 1476, -194, -421, -199 )
+
+[node name="Paddle" parent="." instance=ExtResource( 2 )]
+position = Vector2( 510, 562 )
+scale = Vector2( 1.5, 1 )
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 495, 502 )
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 5, 17 )
+
+[node name="Brick" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 74, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick2" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 76, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick3" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 208, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick4" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 210, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick5" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 349, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick6" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 351, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick7" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 672, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick8" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 674, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick9" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 814, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick10" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 816, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick11" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 948, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick12" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 950, 136 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick13" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 514, 57 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick14" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 80, 222 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick15" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 80, 313 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick16" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 217, 222 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick17" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 818, 215 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick18" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 959, 217 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick19" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 959, 316 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick20" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 518, 218 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick21" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 348, 311 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick22" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 667, 311 )
+scale = Vector2( 3, 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 486, 611 )
+scale = Vector2( 1.00592, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 23.8586, 20 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="Game_over" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 48.0
+margin_top = 43.0
+margin_right = 160.0
+margin_bottom = 74.0
+rect_scale = Vector2( 4.96335, 6.6 )
+text = "Você perdeu
+Tente novamente"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 65.0
+margin_top = 312.0
+margin_right = 136.0
+margin_bottom = 364.0
+rect_scale = Vector2( 4.28, 3.64 )
+text = "Voltar"
